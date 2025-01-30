@@ -13,6 +13,7 @@
 {%- endstyle -%}
 
 {{ 'section-bestsellers.css' | asset_url | stylesheet_tag }}
+{{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
 
 <div class="Bestsellers section-{{ section.id }}-padding">
   <div class="BestsellersBackground">
@@ -43,6 +44,7 @@
   </div>
 </div>
 
+<script src="{{ 'swiper-bundle.min.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'section-bestsellers.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
