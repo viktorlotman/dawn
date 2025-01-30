@@ -58,7 +58,26 @@
     },
     "bestsellers_xdFkC9": {
       "type": "bestsellers",
+      "blocks": {
+        "collection_Ppe6jA": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        },
+        "product_6FizcD": {
+          "type": "product",
+          "settings": {
+            "product": "selling-plans-ski-wax"
+          }
+        }
+      },
+      "block_order": [
+        "collection_Ppe6jA",
+        "product_6FizcD"
+      ],
       "settings": {
+        "title": "Bestsellers",
         "padding_top": 40,
         "padding_bottom": 52
       }

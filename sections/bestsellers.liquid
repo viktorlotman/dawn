@@ -19,7 +19,7 @@
   <div class="BestsellersBackground">
     <div class="BestsellersBackgroundColor"></div>
   </div>
-  <div class="container">
+  <div class="container page-width">
     <div class="BestsellersContent">
       <div class="BestsellersContentTop">
         <div class="BestsellersContentTitle">
@@ -40,6 +40,33 @@
           </div>
         </div>
       </div>
+
+      {% if section.blocks.size > 0 %}
+        <div class="BestsellersContentProductsList">
+          <div class="swiper BestsellersProductsSider">
+            <div class="swiper-wrapper">
+              {% for block in section.blocks %}
+                {% case block.type %}
+                  {% when 'collection' %}
+                    {% if block.settings.collection and block.settings.collection != blank %}
+                      {% for product in block.settings.collection.products %}
+                        <div class="swiper-slide BestsellersProductsSide">
+                          {{ product.title }}
+                        </div>
+                      {% endfor %}
+                    {% endif %}
+                  {% when 'product' %}
+                    {% if block.settings.product and block.settings.product != blank %}
+                      <div class="swiper-slide BestsellersProductsSide">
+                        {{ block.settings.product.title }}
+                      </div>
+                    {% endif %}
+                {% endcase %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
     </div>
   </div>
 </div>
@@ -80,6 +107,30 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 52
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "Collection",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
     }
   ],
   "presets": [
