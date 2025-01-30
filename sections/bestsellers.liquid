@@ -51,14 +51,14 @@
                     {% if block.settings.collection and block.settings.collection != blank %}
                       {% for product in block.settings.collection.products %}
                         <div class="swiper-slide BestsellersProductsSide">
-                          {{ product.title }}
+                          {% render 'bestsellers-card', product: product %}
                         </div>
                       {% endfor %}
                     {% endif %}
                   {% when 'product' %}
                     {% if block.settings.product and block.settings.product != blank %}
                       <div class="swiper-slide BestsellersProductsSide">
-                        {{ block.settings.product.title }}
+                        {% render 'bestsellers-card', product: block.settings.product %}
                       </div>
                     {% endif %}
                 {% endcase %}
@@ -77,6 +77,7 @@
 {% schema %}
 {
   "name": "Bestsellers",
+  "tag": "section",
   "settings": [
     {
       "type": "text",
