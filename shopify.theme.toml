@@ -1,0 +1,7 @@
+[environments.dev]
+store = "marvya-gmbh.myshopify.com"
+open = true
+theme-editor-sync = true
+verbose = true
+theme = "Marvya-GmbH-Dawn"
+
