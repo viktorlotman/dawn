@@ -3,8 +3,29 @@
     <div class="BestsellersCardBackgroundColor"></div>
   </div>
   <div class="BestsellersCardContent">
-    <div class="BestsellersCardContentTitle">
-      {{ product.title }}
+    <div class="BestsellersCardContentImage">
+      {{ product.featured_image | image_url: width: 300, height: 300 | image_tag }}
+    </div>
+    <div class="BestsellersCardContentReview"></div>
+    <div class="BestsellersCardContentDescription">
+      {{ product.description }}
+    </div>
+    <div class="BestsellersCardContentPrice">
+      {% if product.price_min < product.price_max %}
+        <span> ab </span>
+      {% endif %}
+      {% if product.compare_at_price %}
+        <span class="BestsellersCardContentPriceDiscount">
+          {{ product.price_min | money_with_currency }}
+        </span>
+        <span class="BestsellersCardContentPriceOld">
+          {{ product.compare_at_price | money_with_currency }}
+        </span>
+      {% else %}
+        <span class="BestsellersCardContentPriceDefault">
+          {{ product.price_min | money_with_currency }}
+        </span>
+      {% endif %}
     </div>
   </div>
 </div>

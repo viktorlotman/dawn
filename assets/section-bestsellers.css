@@ -1,0 +1,177 @@
+.Bestsellers{
+    position: relative;
+}
+
+.BestsellersBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.BestsellersBackgroundColor, .BestsellersBackgroundColor:empty  {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #EEF2F5;
+}
+
+.BestsellersContent{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.BestsellersContentTop{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.BestsellersContentTitle{
+    font-size: 26px;
+    text-transform: uppercase;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 1.3px;
+    color: #000;
+}
+
+.BestsellersContentButtons{
+    display: flex;
+    gap: 12px;
+}
+
+.BestsellersContentButtonsNav{
+    display: flex;
+    gap: 12px;
+}
+
+.BestsellersContentButtonsNavButton{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background-color: #fff;
+    border: 1px solid #004F9F;
+    border-radius: 2px;
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s;
+    --icon-fill: #004F9F;
+}
+
+.BestsellersContentButtonsNavButton:hover{
+    background-color: #004F9F;
+    --icon-fill: #fff;
+}
+
+.BestsellersContentButtonsNavButtonIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14px;
+    width: 14px;
+}
+
+.BestsellersContentButtonsNavButtonIcon svg{
+    height: 100%;
+    width: 100%;
+}
+
+.BestsellersContentButtonsNavButtonIcon svg path{
+    fill: var(--icon-fill)
+}
+
+
+
+.BestsellersProductsSide.swiper-slide{
+    max-width: 300px;
+    min-width: 288px;
+    width: calc(100% / 4);
+    display: flex;
+    height: auto;
+}
+
+.BestsellersCard{
+    display: flex;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.BestsellersCardBackground{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.BestsellersCardBackgroundColor, .BestsellersCardBackgroundColor:empty {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+}
+
+.BestsellersCardContent{
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.BestsellersCardContentImage{
+    display: flex;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.BestsellersCardContentImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.BestsellersCardContentReview{
+
+}
+
+.BestsellersCardContentDescription{
+    margin-top: 4px;
+    font-size: 16px;
+    color: #000;
+    line-height: 150%;
+    font-weight: 400;
+}
+
+.BestsellersCardContentPrice{
+    display: flex;
+    padding-top: 12px;
+    margin-top: auto;
+}
+
+.BestsellersCardContentPriceDefault{
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.13px;
+    color: #000;
+}
