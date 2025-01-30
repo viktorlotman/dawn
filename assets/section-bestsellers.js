@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
       loop: true,
       slidesPerView: 'auto',
       spaceBetween: 32,
+      grabCursor: true,
       navigation: {
         nextEl: buttonNext,
         prevEl: buttonPrev,

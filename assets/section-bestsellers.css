@@ -34,6 +34,12 @@
     align-items: center;
 }
 
+@media (max-width: 1040px) {
+    .BestsellersContentTop{
+        justify-content: center;
+    }
+}
+
 .BestsellersContentTitle{
     font-size: 26px;
     text-transform: uppercase;
@@ -46,6 +52,12 @@
 .BestsellersContentButtons{
     display: flex;
     gap: 12px;
+}
+
+@media (max-width: 1040px) {
+    .BestsellersContentButtons{
+        display: none;
+    }
 }
 
 .BestsellersContentButtonsNav{
