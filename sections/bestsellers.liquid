@@ -47,21 +47,21 @@
 
       {% if section.blocks.size > 0 %}
         <div class="BestsellersContentProductsList">
-          <div class="swiper BestsellersProductsSider">
+          <div class="swiper BestsellersProductsSider" bestsellers-slider>
             <div class="swiper-wrapper">
               {% for block in section.blocks %}
                 {% case block.type %}
                   {% when 'collection' %}
                     {% if block.settings.collection and block.settings.collection != blank %}
                       {% for product in block.settings.collection.products %}
-                        <div class="swiper-slide BestsellersProductsSide">
+                        <div class="swiper-slide BestsellersProductsSide" {{ block.shopify_attributes }}>
                           {% render 'bestsellers-card', product: product %}
                         </div>
                       {% endfor %}
                     {% endif %}
                   {% when 'product' %}
                     {% if block.settings.product and block.settings.product != blank %}
-                      <div class="swiper-slide BestsellersProductsSide">
+                      <div class="swiper-slide BestsellersProductsSide" {{ block.shopify_attributes }}>
                         {% render 'bestsellers-card', product: block.settings.product %}
                       </div>
                     {% endif %}

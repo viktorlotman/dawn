@@ -91,12 +91,13 @@
     fill: var(--icon-fill)
 }
 
-
+.BestsellersProductsSider:not(.swiper-initialized) .BestsellersProductsSide{
+    margin-right: 32px;
+}
 
 .BestsellersProductsSide.swiper-slide{
-    max-width: 300px;
+    width: 288px;
     min-width: 288px;
-    width: calc(100% / 4);
     display: flex;
     height: auto;
 }
@@ -127,6 +128,10 @@
     background-color: #fff;
 }
 
+.BestsellersCardContentLink{
+    display: contents;
+}
+
 .BestsellersCardContent{
     display: flex;
     flex-direction: column;
@@ -139,9 +144,12 @@
     display: flex;
     width: 100%;
     aspect-ratio: 1 / 1;
+    height: fit-content;
     justify-content: center;
     align-items: center;
     margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
 }
 
 .BestsellersCardContentImage img{
@@ -166,7 +174,21 @@
     display: flex;
     padding-top: 12px;
     margin-top: auto;
+    align-items: baseline;
+    gap: 4px;
 }
+
+.BestsellersCardContentPriceFrom{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #000; 
+}
+
+.BestsellersCardContentPriceFrom.BestsellersCardContentPriceFromCompare{
+    color: #FF4814;
+}
+
 
 .BestsellersCardContentPriceDefault{
     font-size: 26px;
@@ -174,4 +196,76 @@
     line-height: 130%;
     letter-spacing: 0.13px;
     color: #000;
+}
+
+.BestsellersCardContentPriceDiscount{
+    font-size: 26px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.13px;
+    color: #FF4814;
+}
+
+
+.BestsellersCardContentPriceOld{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 150%;
+    color: #C8C8C8;
+    text-decoration-line: line-through;
+    align-self: center;
+    margin-left: 4px;
+}
+
+.BestsellersCardContentButtonCart{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #004F9F;
+    --icon-fill: #fff;
+    height: 48px;
+    width: 48px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    z-index: 5;
+    cursor: pointer;
+    transition: .3s;
+    border: 1px solid #004F9F;
+    transform: translateY(105%);
+}
+
+.BestsellersCardContentButtonCart[data-avaliable="false"]{
+    background-color: #EEF2F5;
+    --icon-fill: #848C8C;
+    border: 1px solid #EEF2F5;
+    pointer-events: none;
+}
+
+.BestsellersCard:hover .BestsellersCardContentButtonCart{
+    transform: translateY(0%);
+}
+
+.BestsellersCardContentButtonCart:hover{
+    background-color: #fff;
+    --icon-fill: #004F9F;
+}
+
+.BestsellersCardContentButtonCartIcon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+}
+
+.BestsellersCardContentButtonCartIcon svg{
+    width: 100%;
+    height: 100%;
+}
+
+.BestsellersCardContentButtonCartIcon svg path {
+    stroke: var(--icon-fill)
 }

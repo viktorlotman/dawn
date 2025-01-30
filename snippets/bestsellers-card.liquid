@@ -1,31 +1,57 @@
 <div class="BestsellersCard">
-  <div class="BestsellersCardBackground">
-    <div class="BestsellersCardBackgroundColor"></div>
-  </div>
+  <a href="{{ product.url }}" class="BestsellersCardContentLink">
+    <div class="BestsellersCardBackground">
+      <div class="BestsellersCardBackgroundColor"></div>
+    </div>
+  </a>
+
   <div class="BestsellersCardContent">
     <div class="BestsellersCardContentImage">
-      {{ product.featured_image | image_url: width: 300, height: 300 | image_tag }}
+      <a href="{{ product.url }}" class="BestsellersCardContentLink">
+        {{ product.featured_image | image_url: width: 300 | image_tag }}
+      </a>
+      <a
+        class="BestsellersCardContentButtonCart"
+        data-avaliable="{{ product.available }}"
+        href="cart/add/{{ product.first_available_variant.id }}"
+      >
+        <div class="BestsellersCardContentButtonCartIcon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19.575 20.25H4.425C4.24045 20.2491 4.06254 20.1811 3.92451 20.0586C3.78648 19.9361 3.69778 19.7675 3.675 19.5844L2.34375 7.58438C2.33191 7.47982 2.34221 7.37394 2.37396 7.27363C2.40572 7.17331 2.45823 7.0808 2.52808 7.0021C2.59794 6.92341 2.68357 6.8603 2.77941 6.81686C2.87525 6.77343 2.97916 6.75065 3.08438 6.75H20.9156C21.0208 6.75067 21.1247 6.77346 21.2206 6.8169C21.3164 6.86034 21.402 6.92346 21.4719 7.00215C21.5417 7.08083 21.5942 7.17334 21.626 7.27365C21.6578 7.37395 21.6681 7.47982 21.6563 7.58438L20.325 19.5844C20.3022 19.7675 20.2135 19.9361 20.0755 20.0586C19.9374 20.1811 19.7595 20.2491 19.575 20.25Z" stroke="white" stroke-width="1.35417" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M8.25 9.75V6.75C8.25 5.75544 8.64509 4.80161 9.34835 4.09835C10.0516 3.39509 11.0054 3 12 3C12.9946 3 13.9484 3.39509 14.6517 4.09835C15.3549 4.80161 15.75 5.75544 15.75 6.75V9.75" stroke="white" stroke-width="1.35417" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M12 15.375C13.0355 15.375 13.875 14.5355 13.875 13.5C13.875 12.4645 13.0355 11.625 12 11.625C10.9645 11.625 10.125 12.4645 10.125 13.5C10.125 14.5355 10.9645 15.375 12 15.375Z" fill="white"/>
+          </svg>
+        </div>
+      </a>
     </div>
     <div class="BestsellersCardContentReview"></div>
-    <div class="BestsellersCardContentDescription">
-      {{ product.description }}
-    </div>
-    <div class="BestsellersCardContentPrice">
-      {% if product.price_min < product.price_max %}
-        <span> ab </span>
+    <a href="{{ product.url }}" class="BestsellersCardContentLink">
+      {% if product.description %}
+        <div class="BestsellersCardContentDescription">
+          {{ product.description }}
+        </div>
       {% endif %}
-      {% if product.compare_at_price %}
-        <span class="BestsellersCardContentPriceDiscount">
-          {{ product.price_min | money_with_currency }}
-        </span>
-        <span class="BestsellersCardContentPriceOld">
-          {{ product.compare_at_price | money_with_currency }}
-        </span>
-      {% else %}
-        <span class="BestsellersCardContentPriceDefault">
-          {{ product.price_min | money_with_currency }}
-        </span>
+      {% if product.price %}
+        <div class="BestsellersCardContentPrice">
+          {% if product.price_min < product.price_max %}
+            <span class="BestsellersCardContentPriceFrom {% if product.compare_at_price %} BestsellersCardContentPriceFromCompare {% endif %}">
+              ab
+            </span>
+          {% endif %}
+          {% if product.compare_at_price %}
+            <span class="BestsellersCardContentPriceDiscount">
+              {{ product.price_min | money_with_currency }}
+            </span>
+            <span class="BestsellersCardContentPriceOld">
+              {{ product.compare_at_price | money_with_currency }}
+            </span>
+          {% else %}
+            <span class="BestsellersCardContentPriceDefault">
+              {{ product.price_min | money_with_currency }}
+            </span>
+          {% endif %}
+        </div>
       {% endif %}
-    </div>
+    </a>
   </div>
 </div>

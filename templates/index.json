@@ -82,6 +82,39 @@
         "padding_bottom": 52
       }
     },
+    "bestsellers_WfyQjY": {
+      "type": "bestsellers",
+      "blocks": {
+        "collection_3rEKtC": {
+          "type": "collection",
+          "settings": {
+            "collection": "hydrogen"
+          }
+        },
+        "collection_UFErpm": {
+          "type": "collection",
+          "settings": {
+            "collection": "frontpage"
+          }
+        },
+        "collection_GtwagF": {
+          "type": "collection",
+          "settings": {
+            "collection": "automated-collection"
+          }
+        }
+      },
+      "block_order": [
+        "collection_3rEKtC",
+        "collection_UFErpm",
+        "collection_GtwagF"
+      ],
+      "settings": {
+        "title": "Bestsellers",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "rich_text": {
       "type": "rich-text",
       "blocks": {
@@ -250,6 +283,7 @@
   "order": [
     "image_banner",
     "bestsellers_xdFkC9",
+    "bestsellers_WfyQjY",
     "rich_text",
     "featured_collection",
     "collage",
