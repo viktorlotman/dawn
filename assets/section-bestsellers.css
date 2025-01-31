@@ -127,12 +127,12 @@
     margin-left: auto;
     width: 100%;
     max-width: calc(var(--page-width) + ((100% - var(--page-width)) / 2));
-    padding-left: 3rem;
+    padding-left: 4.8rem;
 }
 
 @media (max-width: 750px) {
     .BestsellersContentProductsList{
-        padding-left: 1.5rem;
+        padding-left: 2.4rem;
     }
 }
 
