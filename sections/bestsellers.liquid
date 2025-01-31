@@ -12,15 +12,16 @@
   }
 {%- endstyle -%}
 
-{{ 'section-bestsellers.css' | asset_url | stylesheet_tag }}
 {{ 'swiper-bundle.min.css' | asset_url | stylesheet_tag }}
+{{ 'section-bestsellers.css' | asset_url | stylesheet_tag }}
 
 <div class="Bestsellers section-{{ section.id }}-padding">
   <div class="BestsellersBackground">
     <div class="BestsellersBackgroundColor" style="background: {{ section.settings.background }};"></div>
   </div>
-  <div class="container page-width">
-    <div class="BestsellersContent">
+
+  <div class="BestsellersContent">
+    <div class="container page-width">
       <div class="BestsellersContentTop">
         <div class="BestsellersContentTitle">
           {{ section.settings.title }}
@@ -44,34 +45,34 @@
           </div>
         </div>
       </div>
+    </div>
 
-      {% if section.blocks.size > 0 %}
-        <div class="BestsellersContentProductsList">
-          <div class="swiper BestsellersProductsSider" bestsellers-slider>
-            <div class="swiper-wrapper">
-              {% for block in section.blocks %}
-                {% case block.type %}
-                  {% when 'collection' %}
-                    {% if block.settings.collection and block.settings.collection != blank %}
-                      {% for product in block.settings.collection.products %}
-                        <div class="swiper-slide BestsellersProductsSide" {{ block.shopify_attributes }}>
-                          {% render 'bestsellers-card', product: product %}
-                        </div>
-                      {% endfor %}
-                    {% endif %}
-                  {% when 'product' %}
-                    {% if block.settings.product and block.settings.product != blank %}
+    {% if section.blocks.size > 0 %}
+      <div class="BestsellersContentProductsList">
+        <div class="swiper BestsellersProductsSider" bestsellers-slider>
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'collection' %}
+                  {% if block.settings.collection and block.settings.collection != blank %}
+                    {% for product in block.settings.collection.products %}
                       <div class="swiper-slide BestsellersProductsSide" {{ block.shopify_attributes }}>
-                        {% render 'bestsellers-card', product: block.settings.product %}
+                        {% render 'bestsellers-card', product: product %}
                       </div>
-                    {% endif %}
-                {% endcase %}
-              {% endfor %}
-            </div>
+                    {% endfor %}
+                  {% endif %}
+                {% when 'product' %}
+                  {% if block.settings.product and block.settings.product != blank %}
+                    <div class="swiper-slide BestsellersProductsSide" {{ block.shopify_attributes }}>
+                      {% render 'bestsellers-card', product: block.settings.product %}
+                    </div>
+                  {% endif %}
+              {% endcase %}
+            {% endfor %}
           </div>
         </div>
-      {% endif %}
-    </div>
+      </div>
+    {% endif %}
   </div>
 </div>
 

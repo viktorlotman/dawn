@@ -51,8 +51,11 @@
         </div>
       {% endif %}
       {% if product.description %}
-        <div class="BestsellersCardContentDescription">
+        <div class="BestsellersCardContentDescription BestsellersCardContentDescriptionDesktop">
           {{ product.description | strip_html | truncate: 90, '... ' }}
+        </div>
+        <div class="BestsellersCardContentDescription BestsellersCardContentDescriptionMobile">
+          {{ product.description | strip_html | truncate: 64, '... ' }}
         </div>
       {% endif %}
       {% if product.price %}

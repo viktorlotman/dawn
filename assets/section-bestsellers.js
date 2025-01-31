@@ -8,11 +8,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const swiper = new Swiper(slider, {
       loop: true,
       slidesPerView: 'auto',
-      spaceBetween: 32,
+      spaceBetween: 24,
       grabCursor: true,
       navigation: {
         nextEl: buttonNext,
         prevEl: buttonPrev,
+      },
+      breakpoints: {
+        500: {
+          spaceBetween: 32,
+        },
       },
     });
   });

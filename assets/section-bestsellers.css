@@ -6,6 +6,10 @@
     position: relative;
 }
 
+.Bestsellers .container{
+    width: 100%;
+}
+
 .BestsellersBackground{
     position: absolute;
     top: 0;
@@ -105,6 +109,19 @@
 
 .BestsellersContentButtonsNavButtonIcon svg path{
     fill: var(--icon-fill)
+}
+
+.BestsellersContentProductsList{
+    margin-left: auto;
+    width: 100%;
+    max-width: calc(var(--page-width) + ((100% - var(--page-width)) / 2));
+    padding-left: 5rem;
+}
+
+@media (max-width: 750px) {
+    .BestsellersContentProductsList{
+        padding-left: 1.5rem;
+    }
 }
 
 .BestsellersProductsSider:not(.swiper-initialized) .BestsellersProductsSide{
@@ -244,6 +261,19 @@
 @media (max-width: 1040px) {
     .BestsellersCardContentDescription{
         font-size: 14px;
+    }
+}
+
+.BestsellersCardContentDescriptionMobile{
+    display: none;
+}
+
+@media (max-width: 1040px) {
+    .BestsellersCardContentDescriptionDesktop{
+        display: none;
+    }
+    .BestsellersCardContentDescriptionMobile{
+        display: block;
     }
 }
 
