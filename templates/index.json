@@ -79,42 +79,8 @@
       "settings": {
         "title": "Bestsellers",
         "background": "#eef2f5",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    },
-    "bestsellers_WfyQjY": {
-      "type": "bestsellers",
-      "blocks": {
-        "collection_3rEKtC": {
-          "type": "collection",
-          "settings": {
-            "collection": "hydrogen"
-          }
-        },
-        "collection_UFErpm": {
-          "type": "collection",
-          "settings": {
-            "collection": "frontpage"
-          }
-        },
-        "collection_GtwagF": {
-          "type": "collection",
-          "settings": {
-            "collection": "automated-collection"
-          }
-        }
-      },
-      "block_order": [
-        "collection_3rEKtC",
-        "collection_UFErpm",
-        "collection_GtwagF"
-      ],
-      "settings": {
-        "title": "Bestsellers",
-        "background": "linear-gradient(133deg, rgba(250, 220, 54, 1) 11%, rgba(254, 98, 146, 1) 49%, rgba(250, 220, 54, 1) 87%)",
-        "padding_top": 40,
-        "padding_bottom": 52
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     },
     "rich_text": {
@@ -285,7 +251,6 @@
   "order": [
     "image_banner",
     "bestsellers_xdFkC9",
-    "bestsellers_WfyQjY",
     "rich_text",
     "featured_collection",
     "collage",

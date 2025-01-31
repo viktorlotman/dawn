@@ -89,15 +89,21 @@
     background-color: #fff;
     border: 1px solid #004F9F;
     border-radius: 2px;
-    padding: 10px;
+    padding: 12px;
     cursor: pointer;
     transition: .3s;
     --icon-fill: #004F9F;
 }
 
 .BestsellersContentButtonsNavButton:hover{
-    background-color: #004F9F;
-    --icon-fill: #fff;
+    background-color: #E7EFF7;
+    
+}
+
+.BestsellersContentButtonsNavButton:active{
+    border: 1px solid #002B57;
+    --icon-fill: #002B57;
+    background: #E7EFF7;
 }
 
 .BestsellersContentButtonsNavButtonIcon{
@@ -121,7 +127,7 @@
     margin-left: auto;
     width: 100%;
     max-width: calc(var(--page-width) + ((100% - var(--page-width)) / 2));
-    padding-left: 5rem;
+    padding-left: 3rem;
 }
 
 @media (max-width: 750px) {
@@ -210,10 +216,12 @@
     object-fit: contain;
 }
 
-.BestsellersCardContentReview{
+.BestsellersCardContentReview, .BestsellersCardContentReview:empty{
     display: flex;
     align-items: center;
     gap: 8px;
+    min-height: 24px;
+
 }
 
 .BestsellersCardContentReviewStars{
@@ -383,8 +391,13 @@
 }
 
 .BestsellersCardContentButtonCart:hover{
-    background-color: #fff;
-    --icon-fill: #004F9F;
+    background-color: #003D7A;
+    border: 1px solid #003D7A;
+}
+
+.BestsellersCardContentButtonCart:active{
+    background-color: #002B57;
+    border: 1px solid #002B57;
 }
 
 .BestsellersCardContentButtonCartIcon{
@@ -402,4 +415,8 @@
 
 .BestsellersCardContentButtonCartIcon svg path {
     stroke: var(--icon-fill)
+}
+
+.BestsellersCardContentButtonCartIcon svg path[fill="white"] {
+    fill: var(--icon-fill);
 }

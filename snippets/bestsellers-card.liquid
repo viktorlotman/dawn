@@ -23,33 +23,62 @@
       </a>
     </div>
     <a href="{{ product.url }}" class="BestsellersCardContentLink">
-      {% if product.metafields.reviews.rating.value %}
-        <div class="BestsellersCardContentReview">
+      <div class="BestsellersCardContentReview">
+        {% if product.metafields.reviews.rating.value %}
           <div class="BestsellersCardContentReviewStars">
             {% for i in (0..4) %}
               {% assign rating = product.metafields.reviews.rating.value.rating | minus: i | times: 100 %}
 
-              <span
-                class="BestsellersCardContentReviewStar"
-              >
-                <div class="BestsellersCardContentReviewStarIcon">
+              {% if rating > 60 %}
+                <span class="BestsellersCardContentReviewStar">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                      <linearGradient id="Gradient{{product.handle}}{{i}}" gradientTransform="rotate(0)" style="">
-                        <stop offset="0%" stop-color="#FFA800" ></stop>
-                        <stop offset="{{rating}}%" stop-color="#FFA800"></stop>
-                        <stop offset="{{rating}}%" stop-color="transparent"></stop>
-                        </linearGradient>
-                    </defs>
-                    <path d="M7.25672 0.934273C7.53172 0.281104 8.46832 0.281105 8.74332 0.934275L10.3663 4.78939C10.4823 5.06476 10.7445 5.2529 11.0454 5.27673L15.2582 5.61039C15.9719 5.66693 16.2614 6.54692 15.7175 7.00713L12.5079 9.72335C12.2786 9.9174 12.1784 10.2218 12.2485 10.5119L13.2291 14.5732C13.3952 15.2613 12.6375 15.8052 12.0264 15.4365L8.41965 13.2601C8.16202 13.1046 7.83802 13.1046 7.5804 13.2601L3.9736 15.4365C3.3625 15.8052 2.60477 15.2613 2.77091 14.5732L3.75155 10.5119C3.82159 10.2218 3.72147 9.9174 3.49221 9.72335L0.28245 7.00713C-0.261375 6.54692 0.0280544 5.66693 0.741835 5.61039L4.9547 5.27673C5.25561 5.2529 5.51774 5.06476 5.63367 4.78939L7.25672 0.934273Z" fill="url(#Gradient{{product.handle}}{{i}})"/>
+                    <path d="M7.25672 0.934273C7.53172 0.281104 8.46832 0.281105 8.74332 0.934275L10.3663 4.78939C10.4823 5.06476 10.7445 5.2529 11.0454 5.27673L15.2582 5.61039C15.9719 5.66693 16.2614 6.54692 15.7175 7.00713L12.5079 9.72335C12.2786 9.9174 12.1784 10.2218 12.2485 10.5119L13.2291 14.5732C13.3952 15.2613 12.6375 15.8052 12.0264 15.4365L8.41965 13.2601C8.16202 13.1046 7.83802 13.1046 7.5804 13.2601L3.9736 15.4365C3.3625 15.8052 2.60477 15.2613 2.77091 14.5732L3.75155 10.5119C3.82159 10.2218 3.72147 9.9174 3.49221 9.72335L0.28245 7.00713C-0.261375 6.54692 0.0280544 5.66693 0.741835 5.61039L4.9547 5.27673C5.25561 5.2529 5.51774 5.06476 5.63367 4.78939L7.25672 0.934273Z" fill="#FFA800"/>
                   </svg>
-                </div>
-              </span>
+                </span>
+              {% elsif rating > 0 and rating < 60 %}
+                <span class="BestsellersCardContentReviewStar">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9144 6.05599L15.9782 6.25599C16.0307 6.40694 15.9865 6.57471 15.8665 6.67999L11.9892 10L13.138 14.976C13.1769 15.135 13.1172 15.302 12.9864 15.4L12.8109 15.52C12.7427 15.5736 12.6582 15.6018 12.5716 15.6C12.4985 15.6015 12.4266 15.5821 12.3642 15.544L8.00016 12.88L3.66011 15.544C3.59771 15.5821 3.52573 15.6015 3.45267 15.6C3.36607 15.6018 3.28151 15.5736 3.21334 15.52L3.01388 15.4C2.88308 15.302 2.8234 15.135 2.8623 14.976L4.01114 10L0.14179 6.68799C0.0156062 6.58334 -0.0321581 6.41091 0.0221197 6.25599L0.109878 6.05599C0.15654 5.89793 0.296829 5.78603 0.460912 5.77599L5.55888 5.36799L7.5135 0.655991C7.57613 0.499507 7.72831 0.397778 7.89645 0.399991H8.10385C8.27049 0.396446 8.42105 0.49923 8.47881 0.655991L10.4654 5.36799L15.5634 5.77599C15.7275 5.78603 15.8677 5.89793 15.9144 6.05599ZM11.2871 13.248L10.3936 9.504L13.3215 6.99999L9.48409 6.69599L8.00016 3.12799V11.24L11.2871 13.248Z" fill="#FFA800"/>
+                  </svg>
+                </span>
+              {% else %}
+                <span class="BestsellersCardContentReviewStar">
+                  <svg id="b" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 15.2">
+                    <g id="c">
+                      <path d="M15.98,5.86l-.06-.2c-.05-.16-.19-.27-.35-.28l-5.1-.41L8.48,.26C8.42,.1,8.27,0,8.1,0h-.21c-.17,0-.32,.1-.38,.26l-1.95,4.71L.46,5.38c-.16,.01-.3,.12-.35,.28l-.09,.2c-.05,.15,0,.33,.12,.43l3.87,3.31-1.15,4.98c-.04,.16,.02,.33,.15,.42l.2,.12c.07,.05,.15,.08,.24,.08,.07,0,.15-.02,.21-.06l4.34-2.66,4.36,2.66c.06,.04,.13,.06,.21,.06,.09,0,.17-.03,.24-.08l.18-.12c.13-.1,.19-.27,.15-.42l-1.15-4.98,3.88-3.32c.12-.11,.16-.27,.11-.42Z" style="fill:#ffa800; fill-rule:evenodd;"/>
+                      <g>
+                        <polygon points="2.68 6.41 5.61 8.92 4.71 12.66 8 10.65 8 2.54 6.52 6.11 2.68 6.41" style="fill:#fff; fill-rule:evenodd;"/>
+                        <polygon points="13.32 6.41 9.48 6.11 8 2.54 8 10.65 11.29 12.66 10.39 8.92 13.32 6.41" style="fill:#fff; fill-rule:evenodd;"/>
+                      </g>
+                    </g>
+                  </svg>
+                </span>
+              {% endif %}
+
+              {% comment %}
+                <span
+                  class="BestsellersCardContentReviewStar"
+                >
+                  <div class="BestsellersCardContentReviewStarIcon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <defs>
+                        <linearGradient id="Gradient{{product.handle}}{{i}}" gradientTransform="rotate(0)" style="">
+                          <stop offset="0%" stop-color="#FFA800" ></stop>
+                          <stop offset="{{rating}}%" stop-color="#FFA800"></stop>
+                          <stop offset="{{rating}}%" stop-color="transparent"></stop>
+                          </linearGradient>
+                      </defs>
+                      <path d="M7.25672 0.934273C7.53172 0.281104 8.46832 0.281105 8.74332 0.934275L10.3663 4.78939C10.4823 5.06476 10.7445 5.2529 11.0454 5.27673L15.2582 5.61039C15.9719 5.66693 16.2614 6.54692 15.7175 7.00713L12.5079 9.72335C12.2786 9.9174 12.1784 10.2218 12.2485 10.5119L13.2291 14.5732C13.3952 15.2613 12.6375 15.8052 12.0264 15.4365L8.41965 13.2601C8.16202 13.1046 7.83802 13.1046 7.5804 13.2601L3.9736 15.4365C3.3625 15.8052 2.60477 15.2613 2.77091 14.5732L3.75155 10.5119C3.82159 10.2218 3.72147 9.9174 3.49221 9.72335L0.28245 7.00713C-0.261375 6.54692 0.0280544 5.66693 0.741835 5.61039L4.9547 5.27673C5.25561 5.2529 5.51774 5.06476 5.63367 4.78939L7.25672 0.934273Z" fill="url(#Gradient{{product.handle}}{{i}})"/>
+                    </svg>
+                  </div>
+                </span>
+              {% endcomment %}
             {% endfor %}
           </div>
           <span class="BestsellersCardContentReviewCount"> ({{ product.metafields.reviews.rating_count.value }}) </span>
-        </div>
-      {% endif %}
+        {% endif %}
+      </div>
+
       {% if product.description %}
         <div class="BestsellersCardContentDescription BestsellersCardContentDescriptionDesktop">
           {{ product.description | strip_html | truncate: 90, '... ' }}
