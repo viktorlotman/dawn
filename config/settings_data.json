@@ -10,9 +10,9 @@
 {
   "current": {
     "logo_width": 90,
-    "type_header_font": "assistant_n4",
+    "type_header_font": "source_sans_pro_n4",
     "heading_scale": 100,
-    "type_body_font": "assistant_n4",
+    "type_body_font": "source_sans_pro_n4",
     "body_scale": 100,
     "page_width": 1500,
     "spacing_sections": 0,
@@ -135,6 +135,22 @@
       }
     },
     "content_for_index": [],
+    "blocks": {
+      "2855438465747202944": {
+        "type": "shopify://apps/easyreviews/blocks/product_review_embed_block/1341251b-09d7-46f3-ba6a-e732a50e97a5",
+        "disabled": false,
+        "settings": {
+          "position": "product"
+        }
+      },
+      "5136658840658853258": {
+        "type": "shopify://apps/easyreviews/blocks/star_rating_embed_block/1341251b-09d7-46f3-ba6a-e732a50e97a5",
+        "disabled": false,
+        "settings": {
+          "position": "product__title"
+        }
+      }
+    },
     "color_schemes": {
       "scheme-1": {
         "settings": {

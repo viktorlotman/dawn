@@ -1,4 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap');
+
 .Bestsellers{
+    font-family: "Source Sans 3", serif;
     position: relative;
 }
 
@@ -114,6 +118,13 @@
     height: auto;
 }
 
+@media (max-width: 1040px) {
+    .BestsellersProductsSide.swiper-slide{
+        width: 184px;
+        min-width: 184px;
+    }
+}
+
 .BestsellersCard{
     display: flex;
     width: 100%;
@@ -152,6 +163,12 @@
     width: 100%;
 }
 
+@media (max-width: 1040px) {
+    .BestsellersCardContent{
+        padding: 12px;
+    }
+}
+
 .BestsellersCardContentImage{
     display: flex;
     width: 100%;
@@ -171,7 +188,49 @@
 }
 
 .BestsellersCardContentReview{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
 
+.BestsellersCardContentReviewStars{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.BestsellersCardContentReviewStar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.BestsellersCardContentReviewStarIcon, .BestsellersCardContentReviewStarIcon:empty{
+    display: flex;
+    width: 16px;
+    height: 16px;
+    background-size: var(--rating);
+}
+
+.BestsellersCardContentReviewStarIcon svg{
+    width: 100%;
+    height: 100%;
+}
+
+.BestsellersCardContentReviewStarIcon svg path{
+    stroke: #FFA800;
+}
+
+.BestsellersCardContentReviewCount{
+    color: #848C8C;
+    font-size: 16px;
+    line-height: 150%;
+}
+
+@media (max-width: 1040px) {
+    .BestsellersCardContentReviewCount{
+        font-size: 14px;
+    }
 }
 
 .BestsellersCardContentDescription{
@@ -180,6 +239,12 @@
     color: #000;
     line-height: 150%;
     font-weight: 400;
+}
+
+@media (max-width: 1040px) {
+    .BestsellersCardContentDescription{
+        font-size: 14px;
+    }
 }
 
 .BestsellersCardContentPrice{
@@ -197,6 +262,12 @@
     color: #000; 
 }
 
+@media (max-width: 1040px) {
+    .BestsellersCardContentPriceFrom{
+        font-size: 14px;
+    }
+}
+
 .BestsellersCardContentPriceFrom.BestsellersCardContentPriceFromCompare{
     color: #FF4814;
 }
@@ -209,6 +280,12 @@
     letter-spacing: 0.13px;
     color: #000;
 }
+@media (max-width: 1040px) {
+    .BestsellersCardContentPriceDefault{
+        font-size: 20px;
+    }
+}
+
 
 .BestsellersCardContentPriceDiscount{
     font-size: 26px;
@@ -217,7 +294,11 @@
     letter-spacing: 0.13px;
     color: #FF4814;
 }
-
+@media (max-width: 1040px) {
+    .BestsellersCardContentPriceDiscount{
+        font-size: 20px;
+    }
+}
 
 .BestsellersCardContentPriceOld{
     font-size: 16px;
@@ -227,6 +308,11 @@
     text-decoration-line: line-through;
     align-self: center;
     margin-left: 4px;
+}
+@media (max-width: 1040px) {
+    .BestsellersCardContentPriceOld{
+        font-size: 14px;
+    }
 }
 
 .BestsellersCardContentButtonCart{
