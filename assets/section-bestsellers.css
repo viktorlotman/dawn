@@ -57,6 +57,12 @@
     color: #000;
 }
 
+@media (max-width: 1040px) {
+    .BestsellersContentTitle{
+        font-size: 20px;
+    }
+}
+
 .BestsellersContentButtons{
     display: flex;
     gap: 12px;
